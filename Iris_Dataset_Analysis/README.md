@@ -134,9 +134,11 @@ print(data.info())         # Data types and structure
 </div>
 
 ### 🎨 1. Style Configuration
+
 ```python
 sns.set_palette("husl")  # Beautiful color palette for species distinction
 ```
+
 **🎯 Purpose**: Sets up aesthetically pleasing colors for better visual distinction between iris species.
 
 <details>
@@ -150,7 +152,8 @@ sns.set_palette("husl")  # Beautiful color palette for species distinction
 
 ---
 
-### 🔀 2. Pairplot Visualization 
+### 🔀 2. Pairplot Visualization
+
 ```python
 print("Creating pairplot...")
 pairplot = sns.pairplot(data, hue='species')
@@ -160,10 +163,10 @@ plt.show()
 
 <div align="center">
 
-| Component | Function | Insight Value |
-|:---------:|:--------:|:-------------:|
-| **Diagonal** | Feature distributions | Individual patterns | 
-| **Off-diagonal** | Feature relationships | Cross-correlations |
+|    Component     |        Function        |      Insight Value       |
+| :--------------: | :--------------------: | :----------------------: |
+|   **Diagonal**   | Feature distributions  |   Individual patterns    |
+| **Off-diagonal** | Feature relationships  |    Cross-correlations    |
 | **Color coding** | Species identification | Clustering visualization |
 
 </div>
@@ -172,7 +175,7 @@ plt.show()
 <summary><strong>📊 What Pairplot Reveals</strong></summary>
 
 - ✅ **Linear relationships** between features
-- ✅ **Species clustering** patterns  
+- ✅ **Species clustering** patterns
 - ✅ **Outlier identification** across dimensions
 - ✅ **Distribution shapes** for each feature
 - ✅ **Separability assessment** between classes
@@ -182,6 +185,7 @@ plt.show()
 ---
 
 ### 📈 3. Distribution Analysis
+
 ```python
 fig, axes = plt.subplots(2, 2, figsize=(15, 10))
 for i, col in enumerate(numeric_cols):
@@ -200,7 +204,7 @@ col = i % 2 (modulo operation)
 
 Example: Feature index 3
 → row = 3 ÷ 2 = 1
-→ col = 3 % 2 = 1  
+→ col = 3 % 2 = 1
 → Position: (1,1) - bottom right
 ```
 
@@ -219,6 +223,7 @@ Example: Feature index 3
 ---
 
 ### 📦 4. Statistical Box Plot Analysis
+
 ```python
 sns.boxplot(data=data, x=species_col, y=col, ax=axes[row, col_idx])
 ```
@@ -227,18 +232,19 @@ sns.boxplot(data=data, x=species_col, y=col, ax=axes[row, col_idx])
 
 **📊 Box Plot Component Decoder**
 
-| Element | Mathematical Definition | Interpretation |
-|:-------:|:----------------------:|:--------------:|
-| **📦 Box** | IQR = Q3 - Q1 | Middle 50% of data |
-| **➖ Median** | Q2 (50th percentile) | Central tendency |
+|     Element     | Mathematical Definition  |     Interpretation     |
+| :-------------: | :----------------------: | :--------------------: |
+|   **📦 Box**    |      IQR = Q3 - Q1       |   Middle 50% of data   |
+|  **➖ Median**  |   Q2 (50th percentile)   |    Central tendency    |
 | **📏 Whiskers** | 1.5 × IQR from box edges | Normal variation range |
-| **🔴 Outliers** | Beyond whisker limits | Unusual observations |
+| **🔴 Outliers** |  Beyond whisker limits   |  Unusual observations  |
 
 </div>
 
 ---
 
 ### 🔥 5. Advanced Correlation Heatmap
+
 ```python
 correlation_matrix = data.select_dtypes(include=['float64', 'int64']).corr()
 sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
@@ -259,6 +265,7 @@ sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0)
 ---
 
 ### 🎻 6. Violin Plot Distribution Analysis
+
 ```python
 sns.violinplot(data=data, x=species_col, y=col, ax=axes[row, col_idx])
 ```
@@ -267,7 +274,7 @@ sns.violinplot(data=data, x=species_col, y=col, ax=axes[row, col_idx])
 <summary><strong>🎵 Violin Plot Advantages</strong></summary>
 
 - **📊 Kernel Density**: Shows actual distribution shape
-- **📈 Bandwidth Optimization**: Automatic smoothing parameter selection  
+- **📈 Bandwidth Optimization**: Automatic smoothing parameter selection
 - **🔍 Multi-modal Detection**: Reveals multiple peaks in data
 - **📏 Quartile Integration**: Combines box plot information
 - **🎯 Outlier Context**: Shows outliers in distribution context
@@ -326,13 +333,13 @@ The Iris dataset contains 150 samples of iris flowers with:
 
 </div>
 
-| Finding | Description | Visualization | Status |
-|:-------:|:-----------:|:-------------:|:------:|
-| 🎯 **Species Separability** | Clear clustering patterns between species | Pairplot | ✅ Complete |
-| 🔗 **Feature Correlations** | Strong correlation between petal dimensions | Heatmap | ✅ Complete |
-| 📊 **Normal Distributions** | Most features follow roughly normal patterns | Histograms | ✅ Complete |
-| 🚨 **Outlier Detection** | Few outliers identified in measurements | Box Plots | ✅ Complete |
-| 🌸 **Species Characteristics** | Each species has distinct feature ranges | Violin Plots | ✅ Complete |
+|            Finding             |                 Description                  | Visualization |   Status    |
+| :----------------------------: | :------------------------------------------: | :-----------: | :---------: |
+|  🎯 **Species Separability**   |  Clear clustering patterns between species   |   Pairplot    | ✅ Complete |
+|  🔗 **Feature Correlations**   | Strong correlation between petal dimensions  |    Heatmap    | ✅ Complete |
+|  📊 **Normal Distributions**   | Most features follow roughly normal patterns |  Histograms   | ✅ Complete |
+|    🚨 **Outlier Detection**    |   Few outliers identified in measurements    |   Box Plots   | ✅ Complete |
+| 🌸 **Species Characteristics** |   Each species has distinct feature ranges   | Violin Plots  | ✅ Complete |
 
 ## 📈 Sample Visualizations
 
@@ -345,15 +352,19 @@ The Iris dataset contains 150 samples of iris flowers with:
 The analysis produces **5 comprehensive visualizations**:
 
 ### 🔀 1. Pairplot Matrix
+
 > Shows relationships between all feature pairs with species color coding
+
 ```
 📁 Location: figures/Figure_1.png
 🎯 Purpose: Feature relationships and species clustering
 📊 Insights: Clear separation between species, especially Setosa
 ```
 
-### 📈 2. Distribution Histograms  
+### 📈 2. Distribution Histograms
+
 > Frequency distribution of each numerical feature
+
 ```
 📁 Location: figures/Figure_2.png
 🎯 Purpose: Data distribution analysis
@@ -361,7 +372,9 @@ The analysis produces **5 comprehensive visualizations**:
 ```
 
 ### 📦 3. Box Plots by Species
+
 > Statistical summaries and outlier detection
+
 ```
 📁 Location: figures/Figure_3.png
 🎯 Purpose: Outlier detection and species comparison
@@ -369,7 +382,9 @@ The analysis produces **5 comprehensive visualizations**:
 ```
 
 ### 🔥 4. Correlation Heatmap
+
 > Correlation coefficients between features
+
 ```
 📁 Location: figures/Figure_4.png
 🎯 Purpose: Feature correlation analysis
@@ -377,7 +392,9 @@ The analysis produces **5 comprehensive visualizations**:
 ```
 
 ### 🎻 5. Violin Plots by Species
+
 > Distribution shapes with statistical information
+
 ```
 📁 Location: figures/Figure_5.png
 🎯 Purpose: Detailed distribution analysis
@@ -424,24 +441,13 @@ We welcome contributions! Here's how you can help:
 
 [![Contribute](https://img.shields.io/badge/Contribute-Welcome-brightgreen?style=for-the-badge&logo=github)](https://github.com/IdealAnkit/Machine_Learning/issues)
 [![Issues](https://img.shields.io/badge/Report%20Issues-Here-red?style=for-the-badge&logo=bug)](https://github.com/IdealAnkit/Machine_Learning/issues)
-[![Discussions](https://img.shields.io/badge/Join%20Discussion-Community-purple?style=for-the-badge&logo=discord)](https://github.com/IdealAnkit/Machine_Learning/discussions)
 
 </div>
 
 - 🐛 **Report bugs** and suggest improvements
-- 💡 **Add new analysis features** or visualizations  
+- 💡 **Add new analysis features** or visualizations
 - 📖 **Improve documentation** and code comments
 - 🔧 **Optimize performance** and code structure
-
-## 📝 License
-
-<div align="center">
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-</div>
 
 ---
 
@@ -459,9 +465,9 @@ If you found this project helpful, please consider giving it a ⭐!
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://linkedin.com/in/idealankit)
 [![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github)](https://github.com/IdealAnkit)
-[![Email](https://img.shields.io/badge/-Email-red?style=flat-square&logo=gmail&logoColor=white)](mailto:idealankit@example.com)
+[![Email](https://img.shields.io/badge/-Email-red?style=flat-square&logo=gmail&logoColor=white)](mailto:mrankitkumar1530@gmail.com)
 
-*Made with ❤️ and lots of ☕ for the Data Science Community*
+_Made with ❤️ and lots of ☕ for the Data Science Community_
 
 **Happy Analyzing! 🚀📊**
 
@@ -630,30 +636,30 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 data = pd.read_csv('iris.csv')
-print("**********\*********** Dataset loaded successfully. **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** Dataset loaded successfully. \***\*\*\*\*\***\*\***\*\*\*\*\***")
 
-# print("**********\*********** printing dataset: **********\***********")
+# print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing dataset: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 
 # print(data) # Display the dataset
 
-print("**********\*********** printing first 5 rows: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing first 5 rows: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.head()) # Display the first 5 rows of the dataset
-print("**********\*********** printing last 5 rows: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing last 5 rows: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.tail()) # Display the last 5 rows of the dataset
-print("**********\*********** printing summary statistics: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing summary statistics: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.describe()) # Display summary statistics of the dataset
-print("**********\*********** printing dataset information: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing dataset information: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.info()) # Display information about the dataset
-print("**********\*********** printing column names: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing column names: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.columns) # Display the column names of the dataset
-print("**********\*********** printing shape of the dataset: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing shape of the dataset: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.shape) # Display the shape of the dataset
-print("**********\*********** printing missing values: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** printing missing values: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 print(data.isnull().sum()) # Check for missing values in the dataset
 
 # Graphical Representations
 
-print("**********\*********** Creating visualizations: **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** Creating visualizations: \***\*\*\*\*\***\*\***\*\*\*\*\***")
 
 # Set the style for better-looking plots
 
@@ -727,4 +733,4 @@ axes[row, col_idx].set_title(f'Violin Plot of {col}')
 plt.tight_layout()
 plt.show()
 
-print("**********\*********** Visualizations completed! **********\***********")
+print("\***\*\*\*\*\***\*\***\*\*\*\*\*** Visualizations completed! \***\*\*\*\*\***\*\***\*\*\*\*\***")
