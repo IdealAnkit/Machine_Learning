@@ -1,3 +1,20 @@
+Repository: idealankit/machine_learning
+Subpath: /Iris_Dataset_Analysis
+Files analyzed: 3
+
+Estimated tokens: 6.4k
+
+Directory structure:
+└── Iris_Dataset_Analysis/
+├── README.md
+├── iris.csv
+├── p01.py
+└── figures/
+
+================================================
+FILE: Iris_Dataset_Analysis/README.md
+================================================
+
 # 🌸 Iris Dataset Analysis - Comprehensive EDA & Visualization
 
 <div align="center">
@@ -276,6 +293,268 @@ The Iris dataset contains 150 samples of iris flowers with:
 - **Features**: Sepal length, sepal width, petal length, petal width (in cm)
 - **Target**: Species (Setosa, Versicolor, Virginica)
 - **Use case**: Classic dataset for classification and pattern recognition tasks
-  #   M a c h i n e _ L e a r n i n g 
-   
-   
+  #� �M�a�c�h�i�n�e�_�L�e�a�r�n�i�n�g�
+  �
+  �
+
+================================================
+FILE: Iris_Dataset_Analysis/iris.csv
+================================================
+sepal length,sepal width,petal length,petal width,verity
+6.2,3.1,2.4,1.1,Setosa
+5.7,3.1,2.8,2,Versicolor
+6.3,2.7,5.1,0.4,Virginica
+7,3.1,4.8,1.6,Setosa
+5.6,3.1,3.8,0.8,Versicolor
+5.6,2.7,4,0.6,Virginica
+7.1,3.7,6,1.1,Setosa
+6.4,3.2,2.8,0.4,Versicolor
+5.4,2.5,4.7,0.8,Virginica
+6.2,3.3,3.5,0.2,Setosa
+5.4,2.6,3.4,2.8,Versicolor
+5.4,3.3,5.7,1.2,Virginica
+6,3.5,5.2,0.6,Setosa
+4.3,2.7,5.2,1.4,Versicolor
+4.4,3.4,6,1.1,Virginica
+5.4,3.2,3.8,1,Setosa
+5,3.3,5,1.7,Versicolor
+6.1,3.8,3.3,1.8,Virginica
+5.1,2.9,4.4,0.8,Setosa
+4.7,2.7,3.6,0.7,Versicolor
+7,2.6,4,1,Virginica
+5.6,2.7,4.8,-0.6,Setosa
+5.9,3,2.4,0,Versicolor
+4.7,3.1,7.4,2.3,Virginica
+5.4,3.1,2.1,2.5,Setosa
+5.9,3.3,1.7,1,Versicolor
+4.9,3,5.8,1.7,Virginica
+6.1,3.6,5.1,1.4,Setosa
+5.3,2.9,4.9,3.7,Versicolor
+5.6,4.1,4.9,2.1,Virginica
+5.3,3.3,3.8,1.1,Setosa
+7.3,2.7,2.3,0.4,Versicolor
+5.8,2.6,3.9,-0.1,Virginica
+5,3.2,2.6,1.4,Setosa
+6.5,2.9,5.5,0.6,Versicolor
+4.8,3.3,3.6,0.1,Virginica
+6,3.2,2.4,0.7,Setosa
+4.2,3,3.3,0.3,Versicolor
+4.7,2.7,4.5,2.5,Virginica
+6,2.4,2.8,1.9,Setosa
+6.4,2.8,2.4,1.2,Versicolor
+5.9,3.3,4.2,2.4,Virginica
+5.7,3.1,4.2,1.3,Setosa
+5.6,2.5,2.9,0.5,Versicolor
+4.6,3.1,3,2.4,Virginica
+5.2,3.2,4.2,1.6,Setosa
+5.4,2.6,1.3,0.4,Versicolor
+6.6,3.1,1.4,1,Virginica
+6.1,3,2.6,0.5,Setosa
+4.4,2.5,3.4,0.1,Versicolor
+6.1,3.1,4.3,1.9,Virginica
+5.5,3.2,6.3,2.7,Setosa
+5.3,3.4,5.3,0.1,Versicolor
+6.3,3.4,3.5,1.7,Virginica
+6.6,2.4,3.8,0.7,Setosa
+6.5,2.6,2.1,0.8,Versicolor
+5.1,3.2,3.8,0.7,Virginica
+5.6,3.2,3.3,0.5,Setosa
+6.1,3.2,4.3,1.2,Versicolor
+6.6,4.5,2.4,0.5,Virginica
+5.4,3.2,4.7,1.4,Setosa
+5.7,3.5,6.4,1.2,Versicolor
+4.9,3.4,3.6,1,Virginica
+4.8,3.3,4.5,0.5,Setosa
+6.5,2.9,5,0.7,Versicolor
+6.9,3.3,3.1,1.8,Virginica
+5.7,2.7,4.2,1.6,Setosa
+6.6,2.9,3.8,0.4,Versicolor
+6.1,2.8,4,1.3,Virginica
+5.3,3,2.5,1.8,Setosa
+6.1,3.9,3.8,-0.1,Versicolor
+7,2.3,4.6,1.6,Virginica
+5.8,3.3,6.3,0.7,Setosa
+7.1,2.4,5.4,1.7,Versicolor
+3.7,2.8,7.5,0.6,Virginica
+6.5,3.4,2.5,-0.2,Setosa
+5.9,3,5.3,-0.1,Versicolor
+5.6,2.6,4.1,1.2,Virginica
+5.9,2.7,7.5,1.4,Setosa
+4.2,3.3,2.4,0.5,Versicolor
+5.6,2.7,2.4,1.7,Virginica
+6.1,3.1,2.8,-0.1,Setosa
+7,3,0.2,1.1,Versicolor
+5.4,2.7,2.9,0.2,Virginica
+5.2,3.9,2.5,0.7,Setosa
+5.4,3.3,4.1,1.2,Versicolor
+6.5,2.2,4.4,0.5,Virginica
+6.1,3.1,7,0.9,Setosa
+5.4,2.7,5.4,2,Versicolor
+6.2,3.3,2.8,0.7,Virginica
+5.9,2.7,2.3,1.9,Setosa
+6.6,3,4.6,0.3,Versicolor
+5.2,3.2,1.6,1.6,Virginica
+5.5,3.3,6.9,2.4,Setosa
+5.5,2.5,5.8,-0.8,Versicolor
+4.6,2.9,3,0.6,Virginica
+6,2.8,0.9,1.7,Setosa
+6,2.7,6.1,1,Versicolor
+5.8,3.7,3.6,1.5,Virginica
+5.6,3.2,5.9,0.7,Setosa
+4.7,2.5,1.1,1.3,Versicolor
+5.5,3.4,2.8,1.1,Virginica
+5.5,3.8,3.8,2.1,Setosa
+5.2,3.4,3.9,1.4,Versicolor
+5.7,2.4,3,1.5,Virginica
+6.1,2.8,4.9,0.9,Setosa
+7.3,3.5,2,0.8,Versicolor
+5.9,2.7,3.6,0.9,Virginica
+6,3.2,4,1.5,Setosa
+5.7,3.3,4.7,0.9,Versicolor
+4.3,2.6,5,1.4,Virginica
+5.8,3,1.9,2.9,Setosa
+5.8,1.7,1.2,1.9,Versicolor
+7.8,2.6,6,0.9,Virginica
+5.6,2.9,4.4,2.2,Setosa
+6,2.5,2.5,0.9,Versicolor
+5.8,3.7,6.4,-0.4,Virginica
+4.9,2.4,4,0.4,Setosa
+6.7,2.8,5.8,-0.3,Versicolor
+6.4,3.1,3.9,0.9,Virginica
+6.4,3.6,7.3,1.2,Setosa
+5.1,2.4,6.8,2.5,Versicolor
+6.9,3.5,3.4,1.5,Virginica
+4.7,3,5.5,1,Setosa
+6.3,2.6,4.9,1.9,Versicolor
+7.6,3.2,6.1,-0.6,Virginica
+5,3.1,2.2,1.4,Setosa
+5.3,2.8,5,1.8,Versicolor
+5.9,3,5.6,0,Virginica
+5.4,2.8,0.8,2.1,Setosa
+4.6,3,1.8,1.5,Versicolor
+5.9,3.3,0.3,0.9,Virginica
+5,3.6,3.3,1.7,Setosa
+6.2,2.5,5,3,Versicolor
+5.1,3.9,6.4,1.3,Virginica
+7,2.2,3.9,1.4,Setosa
+5.2,2.9,6.6,0.8,Versicolor
+5.5,3.2,1.5,0.5,Virginica
+6.5,3.1,0.9,1.9,Setosa
+4.8,2.8,3.7,0.5,Versicolor
+6,2.9,4.5,1.3,Virginica
+6.8,2.8,3.7,0.8,Setosa
+4.5,2.8,0.3,1.6,Versicolor
+5.9,3.3,3.6,1.5,Virginica
+6,3.1,1.6,2,Setosa
+6.4,2.7,4.9,0.8,Versicolor
+4.8,3.4,4.4,1,Virginica
+4.7,3.1,2.2,0.4,Setosa
+6.2,3.3,2.9,0.8,Versicolor
+6,3.3,2,1.5,Virginica
+
+================================================
+FILE: Iris_Dataset_Analysis/p01.py
+================================================
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+data = pd.read_csv('iris.csv')
+print("**********\*********** Dataset loaded successfully. **********\***********")
+
+# print("**********\*********** printing dataset: **********\***********")
+
+# print(data) # Display the dataset
+
+print("**********\*********** printing first 5 rows: **********\***********")
+print(data.head()) # Display the first 5 rows of the dataset
+print("**********\*********** printing last 5 rows: **********\***********")
+print(data.tail()) # Display the last 5 rows of the dataset
+print("**********\*********** printing summary statistics: **********\***********")
+print(data.describe()) # Display summary statistics of the dataset
+print("**********\*********** printing dataset information: **********\***********")
+print(data.info()) # Display information about the dataset
+print("**********\*********** printing column names: **********\***********")
+print(data.columns) # Display the column names of the dataset
+print("**********\*********** printing shape of the dataset: **********\***********")
+print(data.shape) # Display the shape of the dataset
+print("**********\*********** printing missing values: **********\***********")
+print(data.isnull().sum()) # Check for missing values in the dataset
+
+# Graphical Representations
+
+print("**********\*********** Creating visualizations: **********\***********")
+
+# Set the style for better-looking plots
+
+sns.set_palette("husl")
+
+# 1. Pairplot to show relationships between all features
+
+print("Creating pairplot...")
+pairplot = sns.pairplot(data, hue='species' if 'species' in data.columns else data.columns[-1])
+pairplot.fig.suptitle('Pairplot of Iris Dataset Features', y=1.02)
+plt.show()
+
+# 2. Distribution plots for each feature
+
+print("Creating distribution plots...")
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+fig.suptitle('Distribution of Features in Iris Dataset', fontsize=16)
+
+# Get numeric columns (assuming first 4 columns are features)
+
+numeric_cols = data.select_dtypes(include=['float64', 'int64']).columns[:4]
+
+for i, col in enumerate(numeric_cols):
+row, col_idx = i // 2, i % 2
+axes[row, col_idx].hist(data[col], bins=20, alpha=0.7, edgecolor='black')
+axes[row, col_idx].set_title(f'Distribution of {col}')
+axes[row, col_idx].set_xlabel(col)
+axes[row, col_idx].set_ylabel('Frequency')
+
+plt.tight_layout()
+plt.show()
+
+# 3. Box plots to show distribution and outliers
+
+print("Creating box plots...")
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+fig.suptitle('Box Plots of Features in Iris Dataset', fontsize=16)
+
+for i, col in enumerate(numeric_cols):
+row, col_idx = i // 2, i % 2
+species_col = 'species' if 'species' in data.columns else data.columns[-1]
+sns.boxplot(data=data, x=species_col, y=col, ax=axes[row, col_idx])
+axes[row, col_idx].set_title(f'Box Plot of {col}')
+
+plt.tight_layout()
+plt.show()
+
+# 4. Correlation heatmap
+
+print("Creating correlation heatmap...")
+plt.figure(figsize=(10, 8))
+correlation_matrix = data.select_dtypes(include=['float64', 'int64']).corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', center=0,
+square=True, linewidths=0.5)
+plt.title('Correlation Heatmap of Iris Dataset Features')
+plt.tight_layout()
+plt.show()
+
+# 5. Violin plots for distribution comparison
+
+print("Creating violin plots...")
+fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+fig.suptitle('Violin Plots of Features by Species', fontsize=16)
+
+for i, col in enumerate(numeric_cols):
+row, col_idx = i // 2, i % 2
+species_col = 'species' if 'species' in data.columns else data.columns[-1]
+sns.violinplot(data=data, x=species_col, y=col, ax=axes[row, col_idx])
+axes[row, col_idx].set_title(f'Violin Plot of {col}')
+
+plt.tight_layout()
+plt.show()
+
+print("**********\*********** Visualizations completed! **********\***********")
