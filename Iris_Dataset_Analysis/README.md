@@ -8,7 +8,7 @@
 ![Seaborn](https://img.shields.io/badge/seaborn-v0.11+-purple.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-*A comprehensive exploratory data analysis on the famous Iris flower dataset*
+_A comprehensive exploratory data analysis on the famous Iris flower dataset_
 
 </div>
 
@@ -94,13 +94,13 @@ print(data.info())         # Data types and structure
 
 <div align="center">
 
-| Visualization Type | Purpose | Key Insights |
-|:------------------:|:-------:|:------------:|
-| 🔀 **Pairplot** | Feature relationships | Species clustering patterns |
-| 📈 **Histograms** | Distribution analysis | Data normality assessment |
-| 📦 **Box Plots** | Outlier detection | Species comparison |
-| 🔥 **Heatmap** | Correlation analysis | Feature dependencies |
-| 🎻 **Violin Plots** | Distribution shapes | Detailed species characteristics |
+| Visualization Type  |        Purpose        |           Key Insights           |
+| :-----------------: | :-------------------: | :------------------------------: |
+|   🔀 **Pairplot**   | Feature relationships |   Species clustering patterns    |
+|  📈 **Histograms**  | Distribution analysis |    Data normality assessment     |
+|  📦 **Box Plots**   |   Outlier detection   |        Species comparison        |
+|   🔥 **Heatmap**    | Correlation analysis  |       Feature dependencies       |
+| 🎻 **Violin Plots** |  Distribution shapes  | Detailed species characteristics |
 
 </div>
 
@@ -276,6 +276,6 @@ The Iris dataset contains 150 samples of iris flowers with:
 - **Features**: Sepal length, sepal width, petal length, petal width (in cm)
 - **Target**: Species (Setosa, Versicolor, Virginica)
 - **Use case**: Classic dataset for classification and pattern recognition tasks
-#   M a c h i n e _ L e a r n i n g 
- 
- 
+  #   M a c h i n e _ L e a r n i n g 
+   
+   
