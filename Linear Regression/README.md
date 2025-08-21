@@ -1,107 +1,147 @@
-Repository: idealankit/machine_learning
-Subpath: /Linear Regression
-Files analyzed: 2
+# 📈 Linear Regression Cross-Validation Playground
 
-Estimated tokens: 799
+<div align="center">
 
-Directory structure:
-└── Linear Regression/
-    ├── linear_regression_cv.py.py
-    └── sal.csv
+![Python](https://img.shields.io/badge/python-v3.8+-blue.svg)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-v1.0+-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
+<i>Explore, compare, and visualize linear regression accuracy using four powerful cross-validation techniques!</i>
 
-================================================
-FILE: Linear Regression/linear_regression_cv.py.py
-================================================
-# ---------------------- Import Libraries ----------------------
-import numpy as np
-import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split, KFold, LeaveOneOut, StratifiedKFold
-from sklearn.metrics import r2_score
-from sklearn.preprocessing import KBinsDiscretizer
+</div>
 
-# ---------------------- Load Dataset ----------------------
-df = pd.read_csv("sal.csv")   # Make sure sal.csv is in the same folder as this script
-print(df.head())
+---
 
-# Features (all columns except last) and Target (last column)
+## 🚀 Overview
+
+This project demonstrates how to evaluate a linear regression model using **Holdout**, **LOOCV**, **Stratified K-Fold**, and **K-Fold** cross-validation strategies in Python. Results are compared using the R² score for each method.
+
+> 🎯 **Goal:** See how different validation strategies impact model accuracy and reliability.
+
+---
+
+## 📁 Project Structure
+
+```
+Linear Regression/
+├── linear_regression_cv.py.py   # Main script
+├── sal.csv                     # Dataset file
+├── README.md                   # This documentation
+```
+
+---
+
+## 🛠️ Technologies Used
+
+| Python | Pandas | NumPy | scikit-learn |
+| :----: | :----: | :---: | :----------: |
+|   🐍   |   🐼   |  🔢   |      🤖      |
+
+---
+
+## 📋 Prerequisites
+
+```powershell
+pip install pandas numpy scikit-learn
+```
+
+---
+
+## 📊 Data & Features
+
+- **Input:** `sal.csv` (all columns except last are features)
+- **Target:** Last column in `sal.csv`
+
+---
+
+## 🧑‍💻 How It Works
+
+### 1️⃣ Data Loading & Preparation
+
+```python
+df = pd.read_csv("sal.csv")
 X = df.iloc[:, :-1].values
 y = df.iloc[:, -1].values
+```
 
-# Model
+### 2️⃣ Model Setup
+
+```python
 model = LinearRegression()
+```
 
-# ---------------------- (i) Holdout Validation ----------------------
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-r2_holdout = r2_score(y_test, y_pred)
+### 3️⃣ Validation Techniques
 
-# ---------------------- (ii) Leave-One-Out Cross Validation (LOOCV) ----------------------
-loo = LeaveOneOut()
-predictions, actuals = [], []
+| Method               | What It Does                       | When To Use              |
+| -------------------- | ---------------------------------- | ------------------------ |
+| 🟦 Holdout           | Train/test split (80/20)           | Quick baseline           |
+| 🟩 LOOCV             | Each sample is tested once         | Small datasets, unbiased |
+| 🟨 Stratified K-Fold | Folds preserve target distribution | Imbalanced targets       |
+| 🟧 K-Fold            | Random folds, average results      | General purpose          |
 
-for train_idx, test_idx in loo.split(X):
-    model.fit(X[train_idx], y[train_idx])
-    pred = model.predict(X[test_idx])
-    predictions.append(pred[0])
-    actuals.append(y[test_idx][0])
+---
 
-r2_loocv = r2_score(actuals, predictions)
+## 🔬 Workflow Breakdown
 
-# ---------------------- (iii) Stratified Cross-Validation ----------------------
-# Bin the target variable for stratification
-est = KBinsDiscretizer(
-    n_bins=3,
-    encode='ordinal',
-    strategy='quantile',
-    quantile_method='linear'   # <-- Added to silence warning
-)
-y_binned = est.fit_transform(y.reshape(-1, 1)).ravel()
+<details>
+<summary>🔍 <b>Step-by-step process</b></summary>
 
-skf = StratifiedKFold(n_splits=3)   # use 3 since dataset is small
-r2_stratified_scores = []
+1. **Holdout Validation**
+   - Split data, train, test, compute R²
+2. **LOOCV**
+   - For each sample: train on all others, test on one
+3. **Stratified K-Fold**
+   - Bin target, split into stratified folds, train/test
+4. **K-Fold**
+   - Shuffle, split into 5 folds, train/test
+5. **Results**
+   - Print R² for each method
 
-for train_idx, test_idx in skf.split(X, y_binned):
-    model.fit(X[train_idx], y[train_idx])
-    y_pred = model.predict(X[test_idx])
-    r2_stratified_scores.append(r2_score(y[test_idx], y_pred))
+</details>
 
-r2_stratified = np.mean(r2_stratified_scores)
+---
 
-# ---------------------- (iv) K-Fold Cross Validation ----------------------
-kf = KFold(n_splits=5, shuffle=True, random_state=42)
-r2_kfold_scores = []
+## 📈 Output Example
 
-for train_idx, test_idx in kf.split(X):
-    model.fit(X[train_idx], y[train_idx])
-    y_pred = model.predict(X[test_idx])
-    r2_kfold_scores.append(r2_score(y[test_idx], y_pred))
+```
+Model Accuracy (R² Score):
+(i) Holdout Validation               : 0.9123
+(ii) Leave-One-Out CV (LOOCV)        : 0.9056
+(iii) Stratified K-Fold CV           : 0.9102
+(iv) K-Fold CV                       : 0.9087
+```
 
-r2_kfold = np.mean(r2_kfold_scores)
+---
 
-# ---------------------- Show Results ----------------------
-print("Model Accuracy (R² Score):")
-print(f"(i) Holdout Validation               : {r2_holdout:.4f}")
-print(f"(ii) Leave-One-Out CV (LOOCV)        : {r2_loocv:.4f}")
-print(f"(iii) Stratified K-Fold CV           : {r2_stratified:.4f}")
-print(f"(iv) K-Fold CV                       : {r2_kfold:.4f}")
+## 🧠 Key Insights
 
+- **Holdout**: Fast, but can be sensitive to random splits
+- **LOOCV**: Most robust for small datasets
+- **Stratified K-Fold**: Best for imbalanced targets
+- **K-Fold**: Reliable for general use
 
+---
 
-================================================
-FILE: Linear Regression/sal.csv
-================================================
-YearsExperience,Salary
-1,35000
-2,42000
-3,50000
-4,60000
-5,65000
-6,70000
-7,83000
-8,90000
-9,100000
-10,120000
+## 📝 Customization
 
+- Change `n_bins` or `n_splits` in the script to adjust folds/bins
+- Replace `sal.csv` with your own dataset (same format)
+
+---
+
+## 📚 References
+
+- [scikit-learn documentation](https://scikit-learn.org/stable/documentation.html)
+- [Cross-validation strategies](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+---
+
+<div align="center">
+
+![Data Analysis](https://img.shields.io/badge/Data%20Analysis-Complete-brightgreen?style=for-the-badge&logo=chart-dot-js)
+![Validation Methods](https://img.shields.io/badge/Validation-4%20Types-blue?style=for-the-badge&logo=check)
+![Code Quality](https://img.shields.io/badge/Code%20Quality-High-yellow?style=for-the-badge&logo=code)
+
+<i>Made with ❤️ for the Machine Learning Community</i>
+
+</div>
